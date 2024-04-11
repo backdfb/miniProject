@@ -2,7 +2,9 @@ import React from 'react'
 
 function Modal() {
   return (
-    <div className='modal'>Coming soon. Wait for U.</div>
+    <div className='modal card1'>
+        <h3>coming soon</h3>
+    </div>
   )
 }
 
