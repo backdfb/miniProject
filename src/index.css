@@ -1,13 +1,130 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+/*home*/
+.home {
+  width: 100%;
+  height: 100vh;
+  background-color: #FFCCFF;
+}
+/*navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 110px;
+  padding: 10px 30px;
+
+}
+.logo h1{
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #ffd400;
+  text-shadow: 3px 4px 5px red;
+  font-weight: 500;
+}
+.navbar .navigation {
+  list-style: none;
+}
+.navbar .navigation ul li {
+  display: inline-block;
+  padding: 10px 30px;
+}
+.navbar .navigation ul li a {
+  color: #ffd400;
+  text-shadow: 3px 4px 5px red;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.navbar .btn {
+  padding: 10px 50px;
+}
+.navbar .btn button , .col button{
+  padding: 10px 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #fa8ee5;
+  border: 1px solid #fa8ee5;
+  border-radius: 6px;
+  color: #ffd400;
+  text-shadow: 3px 4px 5px red;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn button:active , .col button:active {
+  background-color: #fa923f;
+}
+/*Main*/
+.main {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+.col {
+  flex-basis: 50%;
+}
+.col1 {
+  margin-left: 45px;
+}
+.col h2 {
+  font-size: 45px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #ffd400;
+  text-shadow: 3px 4px 5px red;
+  font-weight: 600;
+}
+.col p {
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: tomato;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.col button {
+  margin-top: 30px;
+}
+.card {
+  width: 200px;
+  display: inline-block;
+  box-sizing: border-box;
+  height: 220px;
+  margin: 10px 15px;
+  padding: 15px 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.8s ease;
+  cursor: pointer;
+}
+.card1 {
+  background-image: url(Assets/worlddj.jpeg);
+}
+.card2 {
+  background-image: url(Assets/hiphop.jpeg);
+}
+.card3 {
+  background-image: url(Assets/bluespring.jpeg);
+}
+.card4 {
+  background-image: url(Assets/jazz.jpeg);
+}
+.card5 {
+  background-image: url(Assets/umf.jpeg);
+}
+.card6 {
+  background-image: url(Assets/bml.jpeg);
+}
+.card:hover {
+  transform: translateY(-10px);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.modal {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #eee;
 }
