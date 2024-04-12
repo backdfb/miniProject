@@ -2,12 +2,12 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  background-color: #99FF99;
 }
 /*home*/
 .home {
   width: 100%;
   height: 100vh;
-  background-color: #FFCCFF;
 }
 /*navbar*/
 .navbar {
@@ -15,7 +15,7 @@
   align-items: center;
   width: 100%;
   height: 110px;
-  padding: 10px 30px;
+  padding: 10px 45px;
   position: fixed;
 }
 .logo h1{
@@ -45,17 +45,17 @@
   color: #ffd400;
   text-shadow: 3px 4px 5px red;
   font-weight: 600;
+  margin-top: -50px;
 }
 .col p {
   font-size: 20px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: tomato;
   font-weight: 500;
-  margin-top: 20px;
-}
-
-.col button{
   margin-top: 30px;
+}
+.col button{
+  margin-top: 50px;
   padding: 10px 30px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: #fa8ee5;
@@ -71,56 +71,23 @@
   background-color: #fa923f;
 }
 .card {
-  width: 200px;
+  width: 640px;
   display: inline-block;
   box-sizing: border-box;
-  height: 220px;
+  height: 800px;
   margin: 10px 15px;
   padding: 15px 25px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: 0.8s ease;
   position: relative;
-  cursor: pointer;
+  overflow: hidden;
 }
-.card1 {
-  background-image: url(Assets/worlddj.jpeg);
+.slide-effect {
+  animation: slideIn 0.9s ease-out forwards;
 }
-.card2 {
-  background-image: url(Assets/hiphop.jpeg);
-}
-.card3 {
-  background-image: url(Assets/bluespring.jpeg);
-}
-.card4 {
-  background-image: url(Assets/jazz.jpeg);
-}
-.card5 {
-  background-image: url(Assets/umf.jpeg);
-}
-.card6 {
-  background-image: url(Assets/bml.jpeg);
-}
-
 .card:hover .overlay {
   opacity: 10;
-}
-
-.modal {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #eee;
-  height: 700px;
-  width: 600px;
-}
-
-.fade-out {
-  animation: fadeOut 0s forwards; /* 0.5초 동안 앞으로 진행되는 fadeOut 애니메이션을 적용합니다. */
-}
-
-.fade-in {
-  animation: fadeIn 0.1s forwards;
 }
 
 @keyframes fadeOut {
@@ -131,6 +98,10 @@
 @keyframes fadeIn {
   from { opacity: 0; visibility: visible; }
   to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
 .overlay {
@@ -149,4 +120,8 @@
 
 .image-container:hover .overlay {
   opacity: 1;
+}
+
+.footer {
+  margin-bottom: 110 110 110 110;
 }

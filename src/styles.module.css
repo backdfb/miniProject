@@ -1,0 +1,47 @@
+.c {
+    position: absolute;
+    max-width: 650px;
+    max-height: 800px;
+    width: 350px;
+    height: 200px;
+    cursor: pointer;
+    will-change: transform, opacity;
+    margin-left: 210px;
+  }
+  
+  .card1, .card2, .card3, .card4, .card5, .card6 {
+    background-size: cover;
+    width: 650px;
+    height: 800px;
+  }
+  
+  .card1 {
+    background-image: url('Assets/worlddj.jpeg');
+  }
+  
+  .card2 {
+    background-image: url('Assets/jazz.jpeg');
+  }
+
+  .card3 {
+    background-image: url('Assets/bml.jpeg');
+  }
+
+  .card4 {
+    background-image: url('Assets/bluespring.jpeg');
+  }
+
+  .card5 {
+    background-image: url('Assets/hiphop.jpeg');
+  }
+
+  .card6 {
+    background-image: url('Assets/umf.jpeg');
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+  }
