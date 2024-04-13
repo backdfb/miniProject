@@ -8,24 +8,23 @@
     will-change: transform, opacity;
     margin-left: 210px;
   }
-  
-  .card1, .card2, .card3, .card4, .card5, .card6 {
-    background-size: cover;
-    width: 650px;
-    height: 800px;
-  }
-  
-  .card1 {
-    background-image: url('Assets/worlddj.jpeg');
-  }
-  
-  .card2 {
-    background-image: url('Assets/jazz.jpeg');
-  }
-  
+
   .container {
     display: flex;
     align-items: center;
+    width: 500px;
     height: 100%;
     justify-content: center;
+  }
+
+  .container > div {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    will-change: transform, opacity;
+    -webkit-user-select: none;
+    user-select: none;
   }

@@ -1,39 +1,48 @@
-import React, {useState} from 'react'
-import {useSpring, animated} from '@react-spring/web'
-import styles from '../styles.module.css'
+import React, { useState, useEffect } from 'react';
+import { useSpringRef, animated, useTransition } from '@react-spring/web';
+import styles from '../styles.module.css';
+
+const images = [
+  ({ style }) => <animated.img style={{ ...style }} src="Assets/worlddj.jpeg" alt="Image 1" />,
+  ({ style }) => <animated.img style={{ ...style }} src="Assets/jazz.jpeg" alt="Image 2" />,
+  ({ style }) => <animated.img style={{ ...style }} src="Assets/bluespring.jpeg" alt="Image 3" />,
+  ({ style }) => <animated.img style={{ ...style }} src="Assets/hiphop.jpeg" alt="Image 4" />,
+  ({ style }) => <animated.img style={{ ...style }} src="Assets/umf.jpeg" alt="Image 5" />,
+  ({ style }) => <animated.img style={{ ...style }} src="Assets/bml.jpeg" alt="Image 6" />,
+];
 
 const MainPage = () => {
+  const [index, set] = useState(0);
+  const onClick = () => set((state) => (state + 1) % images.length); // 이미지 순환
+  const transRef = useSpringRef();
+  const transitions = useTransition(index, {
+    ref: transRef,
+    keys: null,
+    from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+    leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+  });
+  useEffect(() => {
+    transRef.start();
+  }, [index]);
 
-    const [flipped, set] = useState(false)
-    const { transform, opacity } = useSpring({
-        opacity: flipped ? 1 : 0,
-        transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
-        config: { mass: 5, tension: 500, friction: 80 },
-        delay: 250,
-    })
-    return (
-        <div className='main'>
-            <div className='col col1'>
-                <h2>Festivals</h2>
-                <p>In Here. <br />If U wanna select more, Click the Image!!</p>               
-            </div>
-            <div className={styles.container} onClick={() => set(state => !state)}>
-                <animated.div
-                    className={`${styles.c} ${styles.card1}`}
-                    style={{ opacity: opacity.to(o => 1 - o), transform }}
-                />
-                <animated.div
-                    className={`${styles.c} ${styles.card2}`}
-                    style={{
-                    opacity,
-                    transform,
-                    rotateX: '180deg',
-                    }}
-                />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="main">
+      <div className="col col1">
+        <h2>Festivals</h2>
+        <p>
+          In Here. <br />
+          If U wanna select more, Click the Image!!
+        </p>
+      </div>
+      <div className={styles.container} onClick={onClick}>
+        {transitions((style, i) => {
+          const Image = images[i];
+          return <Image style={style} />;
+        })}
+      </div>
+    </div>
+  );
+};
 
-
-export default MainPage
+export default MainPage;
