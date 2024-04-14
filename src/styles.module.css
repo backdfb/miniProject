@@ -1,26 +1,19 @@
 .c {
   position: absolute;
-  max-width: 650px;
-  max-height: 800px;
+  max-width: 350px;
+  max-height: 500px;
   cursor: pointer;
-  will-change: transform, opacity;
 }
 
 .container {
   align-items: center;
-  width: auto; 
-  height: 700px;
-  margin-bottom: 90px;
-  justify-content: center;
+  width: 20px; 
+  margin-top: 320px;
   position: relative;
 }
 
 .container > div {
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  will-change: transform, opacity;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
