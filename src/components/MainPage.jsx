@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useSpringRef, animated, useTransition } from '@react-spring/web';
+
 import styles from '../styles.module.css';
 
 const images = [
-  ({ style }) => <animated.img style={{ ...style }} src="Assets/worlddj.jpeg" alt="Image 1" />,
-  ({ style }) => <animated.img style={{ ...style }} src="Assets/jazz.jpeg" alt="Image 2" />,
-  ({ style }) => <animated.img style={{ ...style }} src="Assets/bluespring.jpeg" alt="Image 3" />,
-  ({ style }) => <animated.img style={{ ...style }} src="Assets/hiphop.jpeg" alt="Image 4" />,
-  ({ style }) => <animated.img style={{ ...style }} src="Assets/umf.jpeg" alt="Image 5" />,
-  ({ style }) => <animated.img style={{ ...style }} src="Assets/bml.jpeg" alt="Image 6" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/worlddj.jpeg")} alt="Image 1" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/bluespring.jpeg")} alt="Image 2" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/bml.jpeg")} alt="Image 3" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/hiphop.jpeg")} alt="Image 4" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/jazz.jpeg")} alt="Image 5" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/worlddj.jpeg")} alt="Image 6" />,
 ];
 
 const MainPage = () => {
@@ -24,7 +25,7 @@ const MainPage = () => {
   });
   useEffect(() => {
     transRef.start();
-  }, [index]);
+  }, );
 
   return (
     <div className="main">
