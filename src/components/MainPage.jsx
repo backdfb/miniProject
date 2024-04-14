@@ -37,7 +37,7 @@ const MainPage = () => {
           If U wanna find more, Click the Image!!
         </p>
       </div>
-      <div className={styles.container} onClick={onClick}>
+      <div className={`flex fill ${styles.container}`} onClick={onClick}>
         {transitions((style, i) => {
           const Image = images[i];
           return <Image style={style} />;
