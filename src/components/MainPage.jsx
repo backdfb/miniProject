@@ -4,17 +4,17 @@ import { useSpringRef, animated, useTransition } from '@react-spring/web';
 import styles from '../styles.module.css';
 
 const images = [
-  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/worlddj.jpeg")} alt="Image 1" />,
-  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/bluespring.jpeg")} alt="Image 2" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/bluespring.jpeg")} alt="Image 1" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/hiphop.jpeg")} alt="Image 2" />,
   ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/bml.jpeg")} alt="Image 3" />,
-  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/hiphop.jpeg")} alt="Image 4" />,
-  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/jazz.jpeg")} alt="Image 5" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/jazz.jpeg")} alt="Image 4" />,
+  ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/umf.jpeg")} alt="Image 5" />,
   ({ style }) => <animated.img style={{ ...style }} src={require("../Assets/worlddj.jpeg")} alt="Image 6" />,
 ];
 
 const MainPage = () => {
   const [index, set] = useState(0);
-  const onClick = () => set((state) => (state + 1) % images.length); // 이미지 순환
+  const onClick = () => set((state) => (state + 1) % images.length);
   const transRef = useSpringRef();
   const transitions = useTransition(index, {
     ref: transRef,
@@ -33,7 +33,8 @@ const MainPage = () => {
         <h2>Festivals</h2>
         <p>
           In Here. <br />
-          If U wanna select more, Click the Image!!
+          We Will Show You Our Contents. <br />
+          If U wanna find more, Click the Image!!
         </p>
       </div>
       <div className={styles.container} onClick={onClick}>
